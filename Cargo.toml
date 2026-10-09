@@ -1,0 +1,39 @@
+[package]
+name = "orb"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.80"
+description = "A beautiful, highly customizable animated orb rendered in pure Rust."
+license = "MIT"
+authors = ["Aditya Munday"]
+keywords = ["orb", "animation", "graphics", "siri", "procedural"]
+categories = ["graphics", "rendering"]
+
+[lib]
+name = "orb"
+path = "src/lib.rs"
+
+[[bin]]
+name = "orb-demo"
+path = "src/bin/orb_demo.rs"
+
+[[bin]]
+name = "orb-viewer"
+path = "src/bin/orb_viewer.rs"
+required-features = ["viewer"]
+
+[dependencies]
+png = "0.17"
+gif = "0.13"
+rayon = "1.10.0"
+
+[features]
+default = []
+viewer = ["dep:minifb"]
+
+[dependencies.minifb]
+version = "0.28"
+optional = true
+
+[profile.release]
+opt-level = 3

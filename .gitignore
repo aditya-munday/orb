@@ -1,0 +1,6 @@
+/target
+**/*.rs.bk
+/orb.png
+/orb.gif
+/frames/
+*.gif
